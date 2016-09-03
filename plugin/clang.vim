@@ -137,7 +137,7 @@ func! s:IsValidFile()
   endif
   " Please don't use filereadable to test, as the new created file is also
   " unreadable before writting to disk.
-  return &filetype == "c" || &filetype == "cpp"
+  return &modifiable && (&filetype == "c" || &filetype == "cpp")
 endf
 "}}}
 "{{{ s:PDebug
